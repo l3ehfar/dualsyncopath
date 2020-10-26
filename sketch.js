@@ -31,33 +31,26 @@ function draw() {
   for (var i = 0; i < vehicles.length; i++) {
     if(n == 0){
       radius = 6 * sin(i / 40 + frameCount / 30);
-    }else{
-    radius = 3 * sin(i / 60 + frameCount / 30);
-    }
-    var v = vehicles[i];
-    var ln = ((i%10)*10*ceil(i/10));
-    var lm = 80*sin(radians(ln-w));
-    lnheight = ln*h;
-    if((i%2)==0){
-      v.behaviors(n,0,width/2+lm, lnheight, width/2-lm, lnheight+15);
-    }else{
-      v.behaviors(n,1,width/2+lm, lnheight, width/2-lm, lnheight+15);
-    }
-    v.update();
-    v.show(radius);
-    if(n == 0){
       if(counter<=160){
       counter += 0.001*random();
       }else{
         counter = 160;
       }
     }else{
+      radius = 3 * sin(i / 60 + frameCount / 30);
       if(counter >= 0){
         counter -= 0.002;
       }else{
         counter = 0;
       }
     }
+    var v = vehicles[i];
+    var ln = ((i%10)*10*ceil(i/10));
+    var lm = 80*sin(radians(ln-w));
+    lnheight = ln*h;
+    v.behaviors(n,1,width/2+lm, lnheight, width/2-lm, lnheight+15);
+    v.update();
+    v.show(radius);
     v.spin(counter);
   }
   w++;
