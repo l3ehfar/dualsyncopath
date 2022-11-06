@@ -121,7 +121,7 @@ function draw() {
     if (width <= 1400) {
       text_size = 11;
     } else if (width >= 1400) {
-      text_size = 12.5;
+      text_size = 13;
     } 
 
     if (textcolor <= 50) {
@@ -151,7 +151,7 @@ function draw() {
     if (width <= 1400) {
       text_size = 11;
     } else if (width >= 1400) {
-      text_size = 12.5;
+      text_size = 13;
     }
 
     if (textcolor2 <= 50) {
