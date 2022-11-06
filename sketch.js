@@ -23,6 +23,7 @@ let poly2 = []
 let num = 100, num2 = 100;
 var background1;
 let img;
+var text_size = 13;
 
 function preload() {
   font = loadFont('AvenirNextLTPro-Demi.otf');
@@ -95,13 +96,6 @@ function draw() {
     }
   }
 
-  if (width >= 1500) {
-    textSize(18);
-  } else if (width >= 1900) {
-    textSize(20);
-  } else {
-    textSize(14)
-  }
 
   if (n == 1) {
     if (textcolor1 < 255) {
@@ -124,6 +118,12 @@ function draw() {
   }
 
   if (n == 2) {
+    if (width <= 1400) {
+      text_size = 11;
+    } else if (width >= 1400) {
+      text_size = 12.5;
+    } 
+
     if (textcolor <= 50) {
       textcolor += 1;
     } else if (textcolor > 50 & textcolor < 255) {
@@ -140,15 +140,20 @@ function draw() {
     textAlign(CENTER, CENTER)
     noStroke();
     fill(textcolor)
-    textWithBlur("Dualsyncopath", 100 * 3 + 25, textcolor, width / 20 + 5, 25)
-    textWithBlur("is an invitation to those seeking ", 100 * 3 + 60, textcolor, width / 20, 13)
-    textWithBlur("multidisciplinary collaboration", (100 * 3 + 60) + 30, textcolor, width / 20 + 2, 13)
-    textWithBlur("in creative applications.", (100 * 3 + 60) + 60, textcolor, width / 20, 13)
-    // textWithBlur("in computer science.", (100 * 3 + 60) + 90, textcolor, width / 20, 13)
+    textWithBlur("Dualsyncopath", height/2 - 55, textcolor, width / 25 + 5, (text_size + 12))
+    textWithBlur("is an invitation to those seeking ", height/2 - 15, textcolor, width / 25, text_size)
+    textWithBlur("multidisciplinary collaboration", height/2 + 15, textcolor, width / 25 + 2, text_size)
+    textWithBlur("in creative applications.", height/2 + 45, textcolor, width / 25, text_size)
     pop();
   }
 
   if (n == 3) {
+    if (width <= 1400) {
+      text_size = 11;
+    } else if (width >= 1400) {
+      text_size = 12.5;
+    }
+
     if (textcolor2 <= 50) {
       textcolor2 += 1;
     } else if (textcolor2 > 50 & textcolor2 < 255) {
@@ -160,7 +165,6 @@ function draw() {
     }
   }
  
-  
   if (textcolor2 >= 0) {
     push();
     rectMode(CENTER)
@@ -168,15 +172,15 @@ function draw() {
     noStroke();
     fill(textcolor2)
     tint(255, textcolor2); // Display at half opacity
-    image(img, width/20, 100 + 25 );
-    textWithBlur("Who Am I?", 100 * 3 + 25, textcolor2, width / 20 + 5 , 25)
-    textWithBlur("I’m Behnoosh Mohammadzadeh, a creative coder", 100 * 3 + 60, textcolor2, width / 20 , 13)
-    textWithBlur("and Ph.D. student in Human-Computer Interaction", (100 * 3 + 60) + 30, textcolor2, width / 20 + 2, 13)
-    textWithBlur("working on Collaborative Machine Teaching.", (100 * 3 + 60) + 60, textcolor2, width / 20, 13)
-    textWithBlur("I’m interested in conducting collaborative ", (100 * 3 + 60) + 90, textcolor, width / 20, 13)
-    textWithBlur("scenarios in Interactive Machine Learning among", (100 * 3 + 60) + 120, textcolor, width / 20, 13)
-    textWithBlur("domain experts in artistic fields.", (100 * 3 + 60) + 150, textcolor, width / 20, 13)
-    textWithBlur("Looking forward to your collective ideas!", (100 * 3 + 60) + 180, textcolor, width / 20, 13)
+    image(img, width / 25, height/6 - 20);
+    textWithBlur("Who Am I?", height/2 - 55, textcolor2, width / 25 + 5 , text_size + 12)
+    textWithBlur("I’m Behnoosh Mohammadzadeh, a creative coder &", height/2 - 15, textcolor2, width / 25 , text_size)
+    textWithBlur("Ph.D. student in Human-Computer Interaction", height/2 + 15, textcolor2, width / 25 + 2, text_size)
+    textWithBlur("working on Collaborative Machine Teaching.", height/2 + 45, textcolor2, width / 25, text_size)
+    textWithBlur("I’m interested in conducting collaborative ", height/2 + 75, textcolor, width / 25, text_size)
+    textWithBlur("scenarios in Interactive Machine Learning", height/2 + 105, textcolor, width / 25, text_size)
+    textWithBlur("among domain experts in artistic fields.", height/2 + 135, textcolor, width / 25, text_size)
+    textWithBlur("Looking forward to your collective ideas!", height/2 + 165, textcolor, width / 25, text_size)
     pop();
   }
 
@@ -285,17 +289,17 @@ function mouseWheel(event) {
 }
 
 
-function textWithBlur(tmp, thisHeight, textcolor, space, textsize) {
+function textWithBlur(tmp, thisHeight, textcolor, space, text_size) {
   currentHeight = thisHeight;
   push()
   offset = space
   drawingContext.shadowBlur = 30
   drawingContext.shadowColor = color(textcolor)
-  textSize(textsize)
+  textSize(text_size)
   for (var i = 0; i < tmp.length; i++) {
     thisChar = tmp[i]
     text(thisChar, offset, currentHeight)
-    offset += textsize / 1.2
+    offset += text_size / 1.3
   }
   pop()
 }
