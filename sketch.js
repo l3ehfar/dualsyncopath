@@ -180,7 +180,7 @@ function draw() {
     textWithBlur("& HCI team at ISIR, Sorbonne Université.", height/2 + 75, textcolor, width / 25, text_size)
     textWithBlur("I'm enthusiastic about collaborative approaches in", height/2 + 105, textcolor, width / 25, text_size)
     textWithBlur("training a machine learning model and its", height/2 + 135, textcolor, width / 25, text_size)
-    textWithBlur("sociocultural impact on the aimed communities.", height/2 + 165, textcolor, width / 25, text_size)
+    textWithBlur("sociocultural impact on the aimed communities.", height/2 + 155, textcolor, width / 25, text_size)
     pop();
   }
 
