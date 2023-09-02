@@ -174,13 +174,13 @@ function draw() {
     tint(255, textcolor2); // Display at half opacity
     image(img, width / 25, height/6 - 20);
     textWithBlur("Who Am I?", height/2 - 55, textcolor2, width / 25 + 5 , text_size + 12)
-    textWithBlur("I’m Behnoosh Mohammadzadeh, a creative coder &", height/2 - 15, textcolor2, width / 25 , text_size)
-    textWithBlur("Ph.D. student in Human-Computer Interaction", height/2 + 15, textcolor2, width / 25 + 2, text_size)
-    textWithBlur("working on Collaborative Machine Teaching.", height/2 + 45, textcolor2, width / 25, text_size)
-    textWithBlur("I’m interested in conducting collaborative ", height/2 + 75, textcolor, width / 25, text_size)
-    textWithBlur("scenarios in Interactive Machine Learning", height/2 + 105, textcolor, width / 25, text_size)
-    textWithBlur("among domain experts in artistic fields.", height/2 + 135, textcolor, width / 25, text_size)
-    textWithBlur("Looking forward to your collective ideas!", height/2 + 165, textcolor, width / 25, text_size)
+    textWithBlur("I’m Behnoosh Mohammadzadeh, a PhD student", height/2 - 15, textcolor2, width / 25 , text_size)
+    textWithBlur("in Human-Computer Interaction field within ", height/2 + 15, textcolor2, width / 25 + 2, text_size)
+    textWithBlur("the AMI team at LISN, Université Paris Saclay", height/2 + 45, textcolor2, width / 25, text_size)
+    textWithBlur("& HCI team at ISIR, Sorbonne Université.", height/2 + 75, textcolor, width / 25, text_size)
+    textWithBlur("I'm enthusiastic about collaborative approaches in", height/2 + 105, textcolor, width / 25, text_size)
+    textWithBlur("training a machine learning model and its", height/2 + 135, textcolor, width / 25, text_size)
+    textWithBlur("sociocultural impact on the aimed communities.", height/2 + 165, textcolor, width / 25, text_size)
     pop();
   }
 
